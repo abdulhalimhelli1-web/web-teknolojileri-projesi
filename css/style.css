@@ -1,0 +1,25 @@
+body {
+    font-family: 'Lucida Sans', sans-serif;
+    background-color: white;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px black !important;
+}
+
+.navbar {
+    border-bottom: 3px solid orange;
+}
+
+.rounded-circle {
+    transition: transform 2.0s ease;
+}
+
+.rounded-circle:hover {
+    transform: rotate(360deg) scale(2.05);
+}
