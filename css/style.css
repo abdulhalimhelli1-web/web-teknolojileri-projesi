@@ -1,6 +1,6 @@
 body {
     font-family: 'Lucida Sans', sans-serif;
-    background-color: white;
+    background-color: cyan;
 }
 
 .card {
@@ -9,11 +9,11 @@ body {
 
 .card:hover{
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px black !important;
+    box-shadow: 0 12px 24px white !important;
 }
 
 .navbar {
-    border-bottom: 3px solid orange;
+    border-bottom: 3px solid green;
 }
 
 .rounded-circle {
