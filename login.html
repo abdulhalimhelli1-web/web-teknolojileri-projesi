@@ -29,10 +29,34 @@
         </div>
     </nav>
 
-    <div class="container mt-5 mb-5 flex-grow-1">
-        <h1>Burası Giriş Yap Sayfası</h1>
-        <p>Şimdilik boş.</p>
-    </div>
+        <main class="container mt-5 mb-5 flex-grow-1 d-flex align-items-center justify-content-center">
+        <div class="card shadow-lg border-0" style="width: 100%; max-width: 400px;">
+            <div class="card-header bg-dark text-white text-center py-3">
+                <h3 class="mb-0">Öğrenci Girişi</h3>
+            </div>
+            <div class="card-body p-4">
+                
+                <!-- PHP'den dönen HATA MESAJINI göstereceğimiz kutu -->
+                <div id="error-box" class="alert alert-danger d-none text-center" role="alert"></div>
+
+                <form id="loginForm" action="process_login.php" method="POST">
+                    
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Kullanıcı Adı (Okul E-mailiniz)</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="b123456789@sakarya.edu.tr">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Şifre (Öğrenci Numaranız)</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="b123456789">
+                    </div>
+                    
+                    <button type="button" class="btn btn-warning w-100 fw-bold" onclick="validateLogin()">Giriş Yap</button>
+                </form>
+
+            </div>
+        </div>
+    </main>
 
     <footer class="bg-dark text-white text-center py-3 mt-auto">
         <div class="container">
@@ -41,5 +65,46 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JAVASCRIPT: Doğrulama ve Hata Yakalama -->
+    <script>
+        // 1. PHP'den yönlendirme ile gelen hataları URL'den okuyup ekrana yazdıran kod
+        const urlParams = new URLSearchParams(window.location.search);
+        const errorBox = document.getElementById('error-box');
+        
+        if (urlParams.get('error') === 'empty') {
+            errorBox.textContent = "Lütfen alanları boş bırakmayınız!";
+            errorBox.classList.remove('d-none');
+        } else if (urlParams.get('error') === 'wrong') {
+            errorBox.textContent = "Kullanıcı adı veya şifre hatalı!";
+            errorBox.classList.remove('d-none');
+        }
+
+        // 2. JavaScript ile form doğrulaması (Boşluk ve Email formatı)
+        function validateLogin() {
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            errorBox.classList.add('d-none'); // Önceki hataları gizle
+
+            // Boş alan kontrolü
+            if (email === "" || password === "") {
+                errorBox.textContent = "JS Hatası: E-mail ve şifre boş bırakılamaz.";
+                errorBox.classList.remove('d-none');
+                return;
+            }
+
+            // Mail formatı kontrolü (İçinde @ işareti ve . olmak zorunda)
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errorBox.textContent = "JS Hatası: Geçerli bir e-mail formatı giriniz.";
+                errorBox.classList.remove('d-none');
+                return;
+            }
+
+            // Hata yoksa formu process_login.php'ye gönder
+            document.getElementById('loginForm').submit();
+        }
+    </script>
 </body>
 </html>
