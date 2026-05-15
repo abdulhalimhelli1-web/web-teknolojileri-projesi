@@ -7,11 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="d-flex flex-column min-vh-100"> 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body class="d-flex flex-column min-vh-100 bg-light" style="padding-top: 75px;"> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
         <div class="container">
             <a class="navbar-brand" href="index.html">Web Projem</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -28,61 +28,64 @@
         </div>
     </nav>
 
-    <hr>
-
-    <div class="container mt-5 mb-5 flex-grow-1">
+    <main class="container mt-4 mb-5 flex-grow-1">
+        
         <div class="text-center mb-5">
-            <h1>Hakkında Sayfasına Hoş Geldiniz</h1><br><br>
-            <h2>Ben Abdulhalim Helli.</h2>
-            <p>Kısaca kendimden bahsedeyim.</p>
+            <h1 class="display-5 fw-bold">Hakkında Sayfasına Hoş Geldiniz</h1>
+            <h2 class="h4 mt-3 text-secondary">Ben Abdulhalim Helli.</h2>
+            <p class="lead">Kısaca kendimden bahsedeyim.</p>
         </div>
-            <div class="row">
-                <div class="col-md-4 text-center mb-4">
-                    <img src="images/profil.jpeg" alt="Profil Fotoğrafım" class="img-fluid rounded-circle mb-3 shadow" style="max-width: 200px; height: 200px; object-fit: cover;">
-                    
-                    <h2><strong>Abdulhalim Helli</strong></h2>
-                    <p class="text-muted">Bilgisayar Mühendisliği Öğrencisi</p>
-                    
-                    <hr>
-                    
-                    <h5>Bağlantılarım</h5>
-                    <div class="d-grid gap-2 mt-3">
-                        <a href="https://github.com/abdulhalimhelli1-web" target="_blank" class="btn btn-dark">GitHub Profilim</a>
-                        <a href="https://sakarya.edu.tr/" target="_blank" class="btn btn-outline-dark">Üniversitem</a>
+        
+        <div class="row">
+            <div class="col-md-4 text-center mb-4">
+                <img src="images/profil.jpeg" alt="Profil Fotoğrafım" class="img-fluid rounded-circle mb-3 shadow" style="width: 200px; height: 200px; object-fit: cover;">
+                
+                <h2><strong>Abdulhalim Helli</strong></h2>
+                <p class="text-muted">Bilgisayar Mühendisliği Öğrencisi</p>
+                
+                <hr>
+                
+                <h5>Bağlantılarım</h5>
+                <div class="d-grid gap-2 mt-3">
+                    <a href="https://github.com/abdulhalimhelli1-web" target="_blank" class="btn btn-dark shadow-sm">GitHub Profilim</a>
+                    <a href="https://www.sakarya.edu.tr/" target="_blank" class="btn btn-outline-dark shadow-sm">Üniversitem</a>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                
+                <div class="card border-0 mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary border-bottom pb-2">Hakkımda ve Hobilerim</h3>
+                        <p class="card-text mt-3">
+                            Web Teknolojileri dersi için hazırladığım bu projede HTML, CSS, JavaScript ve PHP yeteneklerimi sergiliyorum.
+                        </p>
+                        <p>Sakarya Üniversitesi Bilgisayar Mühendisliği bölümünde uluslararası öğrenci olarak eğitimime devam ediyorum. Ben Sakarya'ya Niğde'den geldim ama benim aslım Suriye, İdlib. Benim doğum yılım 2007, doğum yerim ise Lazkiye.</p>
+                        <p>Ben hayatımın çoğunu Türkiye'de yaşadım, liseyi de Niğde'de okudum. Burada ülkeye çok alıştım ve burada yaşamaya devam etmeyi düşünüyorum.</p>
+                        
+                        <h5 class="mt-4">İlgilerim:</h5>
+                        <ul class="list-group list-group-flush border rounded mt-2">
+                            <li class="list-group-item">Strateji oyunları oynamak (Her türlü)</li>
+                            <li class="list-group-item">Spor yapmak</li>
+                            <li class="list-group-item">Arkadaşlarla gezmek</li>
+                            <li class="list-group-item">Oturup yeni şeyler öğrenmek</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <div class="card mb-4 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="card-title text-primary border-bottom pb-2">Hakkımda ve Hobilerim</h3>
-                            <p class="card-text mt-3">
-                                Web Teknolojileri dersi için hazırladığım bu projede HTML, CSS, JavaScript ve PHP yeteneklerimi sergiliyorum.
-                            </p>
-                            <p>Sakarya Üniversitesi Bilgisayar Mühendisliği bölümünde uluslararası öğrenci olarak eğitimime devam ediyorum. Ben Sakarya'ya Niğde'den geldim ama benim aslım Suriye, İdlip. Benim doğum yılım 2007, doğum yerim ise Lazkiye.</p>
-                            <p>Ben hayatımın çoğunu Türkiye'de yaşadım, liseyi de Niğde'de okudum. Burada ben ülkeyi alıştım ve burada yaşamaya devam etmeye düşünüyorum.</p>
-                            <h5>İlgilerim:</h5>
-                            <ul>
-                                <li>Strateji oyunları oynamak (Her türlü)</li>
-                                <li>Spor yapmak</li>
-                                <li>Arkadaşlarla gezmek</li>
-                                <li>Oturup yeni şeyler öğrenmek</li>
-                            </ul>
-                        </div>
-                    </div>
 
                     <div class="card shadow-sm">
                         <div class="card-body text-center">
                             <h3 class="card-title text-danger mb-3 border-bottom pb-2">Video:</h3>
-                            <p class="text-muted small">Sakarya Üniversitesi Tanıtım Filmi.</p>
+                            <p class="text-muted small">Sakarya Üniversitesi Tanıtım Filmi:</p>
+                            
                             <div class="ratio ratio-16x9">
-                                <iframe src="https://www.youtube.com/watch?v=_Py8ZUSC9WU" title="YouTube video" allowfullscreen>
-                            </div>
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/_Py8ZUSC9WU?si=zcVx3tMCQm7kgo0S" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    
+    </main>
 
     <footer class="bg-dark text-white text-center py-3 mt-auto">
         <div class="container">
